@@ -35,7 +35,9 @@
     ]
   },
   "bit": {
-    "env": {},
+    "env": {
+      "compiler": "bit.envs/compilers/react@2.0.0"
+    },
     "componentsDefaultDirectory": "components/{name}",
     "packageManager": "yarn"
   }
