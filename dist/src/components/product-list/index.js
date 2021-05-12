@@ -13,8 +13,6 @@ var _products = require("./products");
 
 require("./product-list.css");
 
-var _jsxRuntime = require("react/jsx-runtime");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -58,36 +56,24 @@ var ProductList = /*#__PURE__*/function (_Component) {
   }, {
     key: "getProduct",
     value: function getProduct(product, index) {
-      return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("h3", {
-          children: /*#__PURE__*/(0, _jsxRuntime.jsx)("a", {
-            title: product.name + ' details',
-            href: "/",
-            children: product.name
-          })
-        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
-          children: ["Description: ", product.description, " "]
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-          className: "btn",
-          onClick: this.share,
-          children: "Share"
-        })]
-      }, index);
+      return /*#__PURE__*/_react.default.createElement("div", {
+        key: index
+      }, /*#__PURE__*/_react.default.createElement("h3", null, /*#__PURE__*/_react.default.createElement("a", {
+        title: product.name + ' details',
+        href: "/"
+      }, product.name)), /*#__PURE__*/_react.default.createElement("p", null, "Description: ", product.description, " "), /*#__PURE__*/_react.default.createElement("button", {
+        className: "btn",
+        onClick: this.share
+      }, "Share"));
     }
   }, {
     key: "render",
     value: function render() {
       var _this = this;
 
-      return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
-        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("h2", {
-          children: "Products"
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("br", {}), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-          children: _products.products.map(function (product, index) {
-            return _this.getProduct(product, index);
-          })
-        })]
-      });
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h2", null, "Products"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, _products.products.map(function (product, index) {
+        return _this.getProduct(product, index);
+      })));
     }
   }]);
 
